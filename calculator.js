@@ -66,22 +66,28 @@ $(document).ready(function() {
 			case '/':
 				tempstrToEval.push('/100');
 				break;
+				
 		// if operand is add/subtract, multiply by fraction eg 50% = x0.5, then add/subtract tempresult
 			case '+':
 			case '-':
+				
+				// do calculation of what the percentage is of current value in equation
 				var tempresult = tempstrToEval;
-				tempresult.push('/100');
+				var index = tempresult.lastIndexOf(basicLastType);
+				tempresult.splice(index, 1, "*");
+				tempresult.push('/100');		
 				var tempresult2 = eval(tempresult.join(""));
-				tempstrToEval.push(tempresult2);
+				
+				//remove percentage value from tempstrToEval
+				var tempstrToEval2 = tempstrToEval.substring(0, index);
+				tempstrToEval = tempstrToEval2;
+				
+				// push new calculated value to tempstrToEval
+				tempstrToEval.push(tempresult2);			
+				
 				break;
 				    }		
 		
-		/* may not need this
-		//get value of previous number
-		 	//convert all values in tempstrToEval toInteger
-		
-			// find index of non-integer before index2
-			*/
 		console.log('tempstrToEval: '+ tempstrToEval);
 		console.log('tempstr: ' +tempstr);
 		advLastType = 'percent';
