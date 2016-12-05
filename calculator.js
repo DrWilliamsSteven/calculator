@@ -61,8 +61,9 @@ $(document).ready(function() {
 		//tempstrToEval.push(''); // need to still add this in
 		
 		//get last number, convert to fraction
+		var testStrToEval = tempstrToEval.join("");
 		var index2 = testStrToEval.lastIndexOf(basicLastType);
-		tempstrToEval.substr(index2 +1, tempstrToEval-2); //check
+		tempstrToEval.substring(index2 +1, tempstrToEval-2); //check
 		
 		// if operand is multiply or divide, then multiply by fraction eg 50% = x0.5
 		switch(basicLastType){
@@ -86,8 +87,8 @@ $(document).ready(function() {
 		
 			// find index of non-integer before index2
 			*/
-		console.log(tempstrToEval);
-		console.log(tempstr);
+		console.log('tempstrToEval: '+ tempstrToEval);
+		console.log('tempstr: ' +tempstr);
 		advLastType = 'percent';
 	};
 
