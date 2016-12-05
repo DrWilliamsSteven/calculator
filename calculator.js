@@ -86,7 +86,8 @@ $(document).ready(function() {
 		
 			// find index of non-integer before index2
 			*/
-		
+		console.log(tempstrToEval);
+		console.log(tempstr);
 		advLastType = 'percent';
 	};
 
