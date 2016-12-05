@@ -71,16 +71,17 @@ $(document).ready(function() {
 			case '+':
 			case '-':
 				
-				// do calculation of what the percentage is of current value in equation
+				//remove percentage value from tempstrToEval
 				var tempresult = tempstrToEval;
+				var tempstrToSplice = tempstrToEval
+				var tempstrToEval2 = tempstrToSplice.splice(0, index+1);
+				tempstrToEval = tempstrToEval2;
+				
+				// do calculation of what the percentage is of current value in equation
 				var index = tempresult.lastIndexOf(basicLastType);
 				tempresult.splice(index, 1, "*");
 				tempresult.push('/100');		
-				var tempresult2 = eval(tempresult.join(""));
-				
-				//remove percentage value from tempstrToEval
-				var tempstrToEval2 = tempstrToEval.splice(0, index+1);
-				tempstrToEval = tempstrToEval2;
+				var tempresult2 = eval(tempresult.join(""));				
 				
 				// push new calculated value to tempstrToEval
 				tempstrToEval.push(tempresult2);			
