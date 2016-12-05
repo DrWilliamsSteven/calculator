@@ -79,7 +79,7 @@ $(document).ready(function() {
 				var tempresult2 = eval(tempresult.join(""));
 				
 				//remove percentage value from tempstrToEval
-				var tempstrToEval2 = tempstrToEval.substring(0, index);
+				var tempstrToEval2 = tempstrToEval.splice(0, index+1);
 				tempstrToEval = tempstrToEval2;
 				
 				// push new calculated value to tempstrToEval
