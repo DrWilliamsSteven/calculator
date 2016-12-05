@@ -63,7 +63,35 @@ $(document).ready(function() {
 	var js_percent = function() {
 		check_adv_operand();
 		tempstr.push('&#37;');
-		tempstrToEval.push(''); // need to still add this in
+		//tempstrToEval.push(''); // need to still add this in
+		
+		//get last number, convert to fraction
+		var index2 = testStrToEval.lastIndexOf(basicLastType);
+		tempstrToEval.substr(index2 +1, tempstrToEval-2); //check
+		
+		// if operand is multiply or divide, then multiply by fraction eg 50% = x0.5
+		switch(basicLastType){
+			case 'multiply':
+			case 'divide':
+				tempstrToEval.push('/100');
+				break;
+		// if operand is add/subtract, multiply by fraction eg 50% = x0.5, then add/subtract tempresult
+			case 'add':
+			case 'subtract':
+				var tempresult = tempstrToEval;
+				tempresult.push('/100');
+				var tempresult2 = eval(tempresult.join(""));
+				tempstrToEval.push(tempresult2);
+				break;
+				    }		
+		
+		/* may not need this
+		//get value of previous number
+		 	//convert all values in tempstrToEval toInteger
+		
+			// find index of non-integer before index2
+			*/
+		
 		advLastType = 'percent';
 	};
 
