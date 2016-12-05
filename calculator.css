@@ -1,0 +1,49 @@
+body {
+	background-color: grey;
+}
+
+#main {
+	background-color: black;
+	width: 340px;
+	padding: 20px 20px;
+	border: 1px solid #204156;
+	margin: auto;
+	margin-top: 50px;
+	border-radius: 20px;
+}
+
+#screen {
+	background-color: white;
+	width: 300px;
+	height: 90px;	
+	padding: 10px;
+	border: 1px solid #204156;
+	text-align: right;
+	margin: auto;
+	}
+
+#keypad {
+	width: 300px;
+	padding: 10px;
+	margin: auto;
+	text-align: center;
+	position: relative;
+}
+
+
+button {
+	width: 50px;
+	height: 30px;
+}
+
+.btn-danger {
+	width: 250px;
+   margin: 10px;
+}
+
+.sup {
+  position: relative;
+  bottom: 1ex; 
+  font-size: 80%;
+}
+
