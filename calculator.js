@@ -61,9 +61,9 @@ $(document).ready(function() {
 		//tempstrToEval.push(''); // need to still add this in
 		
 		//get last number, convert to fraction
-		var testStrToEval = tempstrToEval.join("");
-		var index2 = testStrToEval.lastIndexOf(basicLastType);
-		tempstrToEval.substring(index2 +1, tempstrToEval-2); //check
+		//var testStrToEval = tempstrToEval.join("");
+		//var index2 = testStrToEval.lastIndexOf(basicLastType);
+		//var lastvalue = tempstrToEval.substring(index2 +1, tempstrToEval-2); //check
 		
 		// if operand is multiply or divide, then multiply by fraction eg 50% = x0.5
 		switch(basicLastType){
