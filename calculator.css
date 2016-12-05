@@ -20,6 +20,7 @@ body {
 	border: 1px solid #204156;
 	text-align: right;
 	margin: auto;
+	margin-bottom: 25px;
 	}
 
 #keypad {
@@ -38,12 +39,12 @@ button {
 
 .btn-danger {
 	width: 250px;
-   margin: 10px;
+   	margin: 10px;
 }
 
 .sup {
-  position: relative;
-  bottom: 1ex; 
-  font-size: 80%;
+  	position: relative;
+  	bottom: 1ex; 
+  	font-size: 80%;
 }
 
