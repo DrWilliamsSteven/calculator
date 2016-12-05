@@ -36,12 +36,7 @@ $(document).ready(function() {
 				case "power":
 					tempstr.push('</span>');					
 					break;
-				case "sqrt":
-					break;
-				case "percent":
-					// need to think how to do this..
-					break;
-				case "plusminus":
+				default:
 					break;
 			}
 			advLastType = "";
