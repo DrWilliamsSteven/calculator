@@ -79,7 +79,7 @@ $(document).ready(function() {
 				// do calculation of what the percentage is of current value in equation
 				var index = tempresult.lastIndexOf(basicLastType);
 				var tempstrToEval2 = tempstrToSplice.splice(0, index+1);
-				
+				console.log('tempstrToEval2: '+ tempstrToEval2);
 				tempresult.splice(index, 1, "*");
 				tempresult.push('/100');		
 				var tempresult2 = eval(tempresult.join(""));
