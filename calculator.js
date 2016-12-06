@@ -80,7 +80,7 @@ $(document).ready(function() {
 				tempresult.push('/100');		
 				var tempresult2 = eval(tempresult.join(""));
 				console.log('tempresult: ' +tempresult);
-				
+				console.log('tempresult2: ' +tempresult2);
 				//remove percentage value from tempstrToEval
 				
 				var tempstrToEval2 = tempstrToSplice.splice(0, index+1);
