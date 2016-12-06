@@ -70,10 +70,12 @@ $(document).ready(function() {
 		// if operand is add/subtract, multiply by fraction eg 50% = x0.5, then add/subtract tempresult
 			case '+':
 			case '-':
+				console.log('tempstrToEval: '+ tempstrToEval);
 				
-				
-				var tempresult = tempstrToEval;		
+				var tempresult = tempstrToEval;
+				console.log('tempstrToEval: '+ tempstrToEval);
 				var tempstrToSplice = tempstrToEval;
+				console.log('tempstrToSplice: '+ tempstrToSplice);
 				// do calculation of what the percentage is of current value in equation
 				var index = tempresult.lastIndexOf(basicLastType);
 				tempresult.splice(index, 1, "*");
