@@ -79,14 +79,14 @@ $(document).ready(function() {
 				tempresult.splice(index, 1, "*");
 				tempresult.push('/100');		
 				var tempresult2 = eval(tempresult.join(""));
-				console.log(tempresult);
+				console.log('tempresult: ' +tempresult);
 				
 				//remove percentage value from tempstrToEval
 				
 				var tempstrToEval2 = tempstrToSplice.splice(0, index+1);
 				// push new calculated value to tempstrToEval
 				tempstrToEval2.push(tempresult2);
-				console.log(tempstrToEval2);
+				console.log('tempstrToEval2: '  +tempstrToEval2);
 				
 				tempstrToEval = tempstrToEval2;
 				
