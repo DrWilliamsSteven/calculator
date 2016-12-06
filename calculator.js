@@ -84,6 +84,7 @@ $(document).ready(function() {
 				//remove percentage value from tempstrToEval
 				
 				var tempstrToEval2 = tempstrToSplice.splice(0, index+1);
+				console.log('tempstrToEval2: '+ tempstrToEval2);
 				// push new calculated value to tempstrToEval
 				tempstrToEval2.push(tempresult2);
 				console.log('tempstrToEval2: '  +tempstrToEval2);
