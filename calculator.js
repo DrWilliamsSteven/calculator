@@ -36,12 +36,7 @@ $(document).ready(function() {
 				case "power":
 					tempstr.push('</span>');					
 					break;
-				case "sqrt":
-					break;
-				case "percent":
-					// need to think how to do this..
-					break;
-				case "plusminus":
+				default:
 					break;
 			}
 			advLastType = "";
@@ -63,7 +58,36 @@ $(document).ready(function() {
 	var js_percent = function() {
 		check_adv_operand();
 		tempstr.push('&#37;');
-		tempstrToEval.push(''); // need to still add this in
+		//tempstrToEval.push(''); // need to still add this in
+					
+		// if operand is multiply or divide, then multiply by fraction eg 50% = x0.5
+		switch(basicLastType){
+			case '*':
+			case '/':
+				tempstrToEval.push('/100');
+				break;
+				
+		// if operand is add/subtract, multiply by fraction eg 50% = x0.5, then add/subtract tempresult
+			case '+':
+			case '-':		
+			
+				var tempresult = tempstrToEval.slice(0);					
+				// do calculation of what the percentage is of current value in equation
+				var index = tempresult.lastIndexOf(basicLastType);					
+				tempresult.splice(index, 1, "*");
+				tempresult.push('/100');							
+				var tempresult2 = eval(tempresult.join(""));					
+				
+				//remove percentage value from tempstrToEval
+				var tempstrToSplice = tempstrToEval.slice(0);		
+				var tempstrToEval2 = tempstrToSplice.splice(0, index+1);
+				
+				// push new calculated value to tempstrToEval
+				tempstrToEval2.push(tempresult2);	
+				tempstrToEval = tempstrToEval2;													
+				break;
+				    }				
+		
 		advLastType = 'percent';
 	};
 
