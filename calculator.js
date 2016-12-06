@@ -81,9 +81,9 @@ $(document).ready(function() {
 				console.log('index: '+ index);
 				var tempstrToEval2 = tempstrToSplice.splice(0, index+1);
 				console.log('tempstrToEval2: '+ tempstrToEval2);
-				tempresult.splice(index, 1, "*");
-				tempresult.push('/100');		
-				var tempresult2 = eval(tempresult.join(""));
+				var tempresult2 = tempresult.splice(index, 1, "*");
+				tempresult2.push('/100');		
+				var tempresult3 = eval(tempresult2.join(""));
 				console.log('tempresult: ' +tempresult);
 				console.log('tempresult2: ' +tempresult2);
 				//remove percentage value from tempstrToEval
@@ -91,7 +91,7 @@ $(document).ready(function() {
 				
 				console.log('tempstrToEval2: '+ tempstrToEval2);
 				// push new calculated value to tempstrToEval
-				tempstrToEval2.push(tempresult2);
+				tempstrToEval2.push(tempresult3);
 				console.log('tempstrToEval2: '  +tempstrToEval2);
 				
 				tempstrToEval = tempstrToEval2;
